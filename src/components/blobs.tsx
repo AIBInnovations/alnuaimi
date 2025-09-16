@@ -64,7 +64,7 @@ export function AnimatedBlobs() {
 
   return (
     <div
-      className="min-h-screen w-full flex items-center justify-center overflow-hidden fixed top-0 left-0 relative"
+      className="h-screen w-screen flex items-center justify-center overflow-hidden fixed top-0 left-0 z-10"
       style={{
         backgroundColor: "#212a37",
         filter: `blur(${scrollProgress * 5}px)`,
@@ -74,7 +74,7 @@ export function AnimatedBlobs() {
     >
       {/* Animated gradient background */}
       <div
-        className="absolute inset-0 opacity-30"
+        className="absolute inset-0 opacity-30 w-full h-full"
         style={{
           background: `
             radial-gradient(circle at 20% 50%, #31C3BF 0%, transparent 50%),
