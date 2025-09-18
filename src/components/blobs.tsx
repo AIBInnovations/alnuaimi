@@ -1,6 +1,5 @@
 import type React from "react"
 import { useState, useEffect } from "react"
-import { GooeyText } from "@/components/ui/gooey-text-morphing"
 
 export function AnimatedBlobs() {
   const [scrollY, setScrollY] = useState(0);
@@ -66,69 +65,11 @@ export function AnimatedBlobs() {
     <div
       className="h-screen w-screen flex items-center justify-center overflow-hidden fixed top-0 left-0 z-10"
       style={{
-        backgroundColor: "#212a37",
         filter: `blur(${scrollProgress * 5}px)`,
         transform: `scale(${1 + scrollProgress * 0.3})`,
         transition: "filter 0.05s ease-out, transform 0.05s ease-out"
       }}
     >
-      {/* Animated gradient background */}
-      <div
-        className="absolute inset-0 opacity-30 w-full h-full"
-        style={{
-          background: `
-            radial-gradient(circle at 20% 50%, #31C3BF 0%, transparent 50%),
-            radial-gradient(circle at 80% 20%, #4FD1CE 0%, transparent 50%),
-            radial-gradient(circle at 40% 80%, #26A5A1 0%, transparent 50%),
-            radial-gradient(circle at 0% 100%, #1C8B87 0%, transparent 50%),
-            radial-gradient(circle at 80% 100%, #31C3BF 0%, transparent 50%),
-            radial-gradient(circle at 0% 0%, #4FD1CE 0%, transparent 50%)
-          `,
-          animation: "gradientMove 20s ease-in-out infinite"
-        }}
-      />
-
-      {/* CSS Animation */}
-      <style jsx>{`
-        @keyframes gradientMove {
-          0%, 100% {
-            background:
-              radial-gradient(circle at 20% 50%, #31C3BF 0%, transparent 50%),
-              radial-gradient(circle at 80% 20%, #4FD1CE 0%, transparent 50%),
-              radial-gradient(circle at 40% 80%, #26A5A1 0%, transparent 50%),
-              radial-gradient(circle at 0% 100%, #1C8B87 0%, transparent 50%),
-              radial-gradient(circle at 80% 100%, #31C3BF 0%, transparent 50%),
-              radial-gradient(circle at 0% 0%, #4FD1CE 0%, transparent 50%);
-          }
-          25% {
-            background:
-              radial-gradient(circle at 40% 70%, #31C3BF 0%, transparent 50%),
-              radial-gradient(circle at 60% 40%, #4FD1CE 0%, transparent 50%),
-              radial-gradient(circle at 20% 60%, #26A5A1 0%, transparent 50%),
-              radial-gradient(circle at 80% 80%, #1C8B87 0%, transparent 50%),
-              radial-gradient(circle at 90% 20%, #31C3BF 0%, transparent 50%),
-              radial-gradient(circle at 10% 10%, #4FD1CE 0%, transparent 50%);
-          }
-          50% {
-            background:
-              radial-gradient(circle at 60% 30%, #31C3BF 0%, transparent 50%),
-              radial-gradient(circle at 30% 70%, #4FD1CE 0%, transparent 50%),
-              radial-gradient(circle at 70% 40%, #26A5A1 0%, transparent 50%),
-              radial-gradient(circle at 20% 20%, #1C8B87 0%, transparent 50%),
-              radial-gradient(circle at 90% 90%, #31C3BF 0%, transparent 50%),
-              radial-gradient(circle at 40% 10%, #4FD1CE 0%, transparent 50%);
-          }
-          75% {
-            background:
-              radial-gradient(circle at 80% 60%, #31C3BF 0%, transparent 50%),
-              radial-gradient(circle at 20% 30%, #4FD1CE 0%, transparent 50%),
-              radial-gradient(circle at 60% 70%, #26A5A1 0%, transparent 50%),
-              radial-gradient(circle at 40% 40%, #1C8B87 0%, transparent 50%),
-              radial-gradient(circle at 10% 80%, #31C3BF 0%, transparent 50%),
-              radial-gradient(circle at 70% 20%, #4FD1CE 0%, transparent 50%);
-          }
-        }
-      `}</style>
      <div
        className="absolute pointer-events-none z-10"
        style={{
@@ -137,13 +78,9 @@ export function AnimatedBlobs() {
          transition: "opacity 0.05s ease-out, transform 0.05s ease-out"
        }}
      >
-        <GooeyText
-          texts={["Alnuaimi", "Innovation", "Excellence", "Future"]}
-          morphTime={2}
-          cooldownTime={1.5}
-          className="w-full"
-          textClassName="text-white font-bold text-8xl md:text-9xl leading-none tracking-tighter"
-        />
+        <h1 className="text-white font-bold text-8xl md:text-9xl leading-none tracking-tighter text-center">
+          Alnuaimi
+        </h1>
       </div>
       <div className="grid" style={{ gridTemplateAreas: "'stack'" }}>
         <div
@@ -179,3 +116,4 @@ export function AnimatedBlobs() {
     </div>
   )
 }
+

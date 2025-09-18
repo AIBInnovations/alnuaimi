@@ -2,38 +2,27 @@
 
 import { AnimatedBlobs } from "@/components/blobs";
 import { Header } from "@/components/ui/header";
+import { AnimatedGradientBackground } from "@/components/ui/animated-gradient-background";
+import { ServicesSection } from "@/components/services-section";
+import { DemoServicesSection } from "@/components/demo-services-section";
+import { AboutSection } from "@/components/about-section";
+import { CTASection } from "@/components/cta-section";
+import { TestimonialsSection } from "@/components/testimonials-section";
+import { ContactSection } from "@/components/contact-section";
 
 export default function Home() {
   return (
-    <div style={{ backgroundColor: "#212a37" }}>
+    <div style={{ backgroundColor: "#1F3130" }}>
+      <AnimatedGradientBackground />
       <Header />
       <AnimatedBlobs />
       <main className="relative z-20" style={{ marginTop: "100vh" }}>
-        {/* Next section that overlays on top */}
-        <div className="min-h-screen rounded-t-3xl shadow-2xl" style={{ backgroundColor: "#212a37" }}>
-          <div className="flex items-center justify-center min-h-screen">
-            <div className="text-center px-8">
-              <h2 className="text-4xl font-bold text-white mb-4">Welcome to the Next Section</h2>
-              <p className="text-white/70 text-lg mb-8">
-                This section smoothly overlays on top of the fixed hero background
-              </p>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
-                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-                  <h3 className="text-xl font-semibold text-white mb-2">Feature 1</h3>
-                  <p className="text-white/70">Amazing functionality that sets us apart</p>
-                </div>
-                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-                  <h3 className="text-xl font-semibold text-white mb-2">Feature 2</h3>
-                  <p className="text-white/70">Innovative solutions for modern problems</p>
-                </div>
-                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-                  <h3 className="text-xl font-semibold text-white mb-2">Feature 3</h3>
-                  <p className="text-white/70">Cutting-edge technology and design</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <ServicesSection />
+        <DemoServicesSection />
+        <AboutSection />
+        <CTASection />
+        <TestimonialsSection />
+        <ContactSection />
       </main>
     </div>
   );
