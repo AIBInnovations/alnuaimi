@@ -118,7 +118,9 @@ export function CTASection() {
           <div className="h-[250px] flex items-center justify-center">
             <button className="px-6 py-3 bg-[#00FFFF] text-[#0a1f1f] border-none rounded-[10px] text-sm font-semibold cursor-pointer flex items-center justify-center gap-2 transition-all duration-300 hover:bg-[#00FFFF]/90 hover:transform hover:-translate-y-1 hover:shadow-[0_15px_40px_rgba(0,255,255,0.4)]">
               Get Started Now
-              <span className="text-base">↗</span>
+              <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M7 17L17 7M17 7H7M17 7V17"/>
+              </svg>
             </button>
           </div>
         </div>

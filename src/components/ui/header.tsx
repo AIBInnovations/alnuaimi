@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -19,9 +20,7 @@ export function Header() {
 
   const navItems = [
     { name: "Home", href: "#" },
-    { name: "About", href: "#" },
-    { name: "Services", href: "#" },
-    { name: "Portfolio", href: "#" },
+    { name: "Service", href: "#" },
     { name: "Contact", href: "#" },
   ];
 
@@ -39,7 +38,7 @@ export function Header() {
         className={cn(
           "transition-all duration-700 ease-out",
           isScrolled
-            ? "mx-4 sm:mx-8 md:mx-12 lg:mx-16 xl:mx-20 rounded-2xl backdrop-blur-md bg-white/10 border border-white/20 shadow-2xl"
+            ? "mx-4 sm:mx-8 md:mx-12 lg:mx-16 xl:mx-20 rounded-2xl backdrop-blur-md bg-white/10 shadow-2xl"
             : "mx-0 rounded-none bg-transparent"
         )}
         layout
@@ -49,30 +48,9 @@ export function Header() {
           isScrolled ? "px-4 sm:px-6 lg:px-8 max-w-none" : "px-8 sm:px-12 lg:px-16 xl:px-20 max-w-full"
         )}>
           <div className="flex items-center justify-between h-16 py-3 relative transition-all duration-700">
-          {/* Logo - Far Left */}
-          <motion.div
-            className={cn(
-              "flex-shrink-0 transition-all duration-700",
-              isScrolled ? "translate-x-0" : "-translate-x-4 sm:-translate-x-6 lg:-translate-x-8"
-            )}
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            <motion.h1
-              className="text-2xl font-bold text-white/80 transition-colors duration-500"
-              whileHover={{ scale: 1.05 }}
-            >
-              AlNuaimi
-            </motion.h1>
-          </motion.div>
-
-          {/* Navigation - Center */}
+          {/* Navigation - Left side */}
           <motion.nav
-            className={cn(
-              "hidden md:flex absolute left-1/2 transform -translate-x-1/2 transition-all duration-700",
-              isScrolled ? "space-x-4" : "space-x-6 lg:space-x-8 xl:space-x-10"
-            )}
+            className="hidden md:flex flex-1 ml-0"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
@@ -81,7 +59,7 @@ export function Header() {
               <motion.a
                 key={item.name}
                 href={item.href}
-                className="relative px-3 py-2 text-sm font-medium text-white/70 hover:text-white/90 transition-colors duration-300"
+                className="relative px-4 py-2 mr-8 text-sm font-medium text-white/70 hover:text-white/90 transition-colors duration-300"
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
@@ -99,10 +77,34 @@ export function Header() {
             ))}
           </motion.nav>
 
-          {/* CTA Button - Far Right */}
+          {/* Logo - Center (only visible when scrolled) */}
           <motion.div
             className={cn(
-              "flex-shrink-0 transition-all duration-700",
+              "absolute left-1/2 transform -translate-x-1/2 transition-all duration-700",
+              isScrolled ? "opacity-100" : "opacity-0 pointer-events-none"
+            )}
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: isScrolled ? 1 : 0, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+            >
+              <Image
+                src="/logo.png"
+                alt="AlNuaimi"
+                width={180}
+                height={60}
+                className="object-contain"
+                priority
+              />
+            </motion.div>
+          </motion.div>
+
+          {/* CTA Buttons - Far Right */}
+          <motion.div
+            className={cn(
+              "flex-shrink-0 flex items-center gap-4 transition-all duration-700",
               isScrolled ? "translate-x-0" : "translate-x-4 sm:translate-x-6 lg:translate-x-8"
             )}
             initial={{ opacity: 0, x: 50 }}
@@ -110,11 +112,18 @@ export function Header() {
             transition={{ duration: 0.6, delay: 0.5 }}
           >
             <motion.button
+              className="px-6 py-2 rounded-full font-medium text-sm bg-[#00FFFF] text-[#1F3130] hover:bg-[#00FFFF]/90 transition-all duration-300"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Book Audit
+            </motion.button>
+            <motion.button
               className="px-6 py-2 rounded-full font-medium text-sm bg-white/10 text-white/80 border border-white/20 hover:bg-white/20 transition-all duration-300"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              Get Started
+              Contact
             </motion.button>
           </motion.div>
 

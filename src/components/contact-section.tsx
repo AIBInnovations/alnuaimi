@@ -16,15 +16,15 @@ export function ContactSection() {
         }}
       />
 
-      {/* Curved Gradient Surface - Tilted Left */}
+      {/* Curved Gradient Surface - Tilted Right */}
       <div
         className="absolute h-[500px] overflow-visible z-0"
         style={{
-          bottom: '-100px',
-          left: '-600px',
-          right: '600px',
-          transform: 'rotate(45deg)',
-          transformOrigin: 'center bottom'
+          bottom: '-600px',
+          left: '-400px',
+          right: '800px',
+          transform: 'rotate(25deg)',
+          transformOrigin: 'right bottom'
         }}
       >
         {/* Clipping container for horizontal only */}
@@ -79,8 +79,8 @@ export function ContactSection() {
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
           {/* Left Section */}
-          <div className="text-white flex flex-col justify-start pt-20">
-            <button className="px-6 py-2 border border-[#00FFFF] text-[#00FFFF] rounded-full text-sm mb-10 bg-transparent hover:bg-[#00FFFF]/10 transition-all duration-300">
+          <div className="text-white flex flex-col justify-start pt-10">
+            <button className="px-4 py-1.5 border border-[#00FFFF] text-[#00FFFF] rounded-full text-sm mb-10 bg-transparent hover:bg-[#00FFFF]/10 transition-all duration-300 w-fit">
               Contact Us
             </button>
 
@@ -88,10 +88,10 @@ export function ContactSection() {
               Scaling Made<br/>Simple with AI
             </h1>
 
-            <button className="inline-flex items-center gap-3 px-8 py-4 bg-[#00FFFF] text-[#1F3130] rounded-lg font-semibold hover:bg-[#00FFFF]/90 hover:transform hover:-translate-y-1 hover:shadow-[0_10px_25px_rgba(0,255,255,0.3)] transition-all duration-300">
+            <button className="inline-flex items-center gap-2 px-6 py-3 bg-[#00FFFF] text-[#1F3130] rounded-lg font-semibold hover:bg-[#00FFFF]/90 hover:transform hover:-translate-y-1 hover:shadow-[0_10px_25px_rgba(0,255,255,0.3)] transition-all duration-300 w-fit">
               Get Started
               <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M5 12h14M12 5l7 7-7 7"/>
+                <path d="M7 17L17 7M17 7H7M17 7V17"/>
               </svg>
             </button>
           </div>
@@ -151,8 +151,8 @@ export function ContactSection() {
                 </h2>
                 <a href="#" className="inline-flex items-center gap-2 text-[#00FFFF] hover:transform hover:translate-x-1 transition-all duration-300">
                   Explore more
-                  <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                  <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M7 17L17 7M17 7H7M17 7V17"/>
                   </svg>
                 </a>
               </div>
@@ -172,8 +172,8 @@ export function ContactSection() {
                 <h2 className="text-3xl font-normal text-[#e0f7fa]">Drop us a message</h2>
                 <button className="flex items-center gap-2 px-5 py-2 border border-[#00FFFF] text-[#00FFFF] rounded-md text-sm hover:bg-[#00FFFF]/10 transition-all duration-300">
                   Contact Us
-                  <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                  <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M7 17L17 7M17 7H7M17 7V17"/>
                   </svg>
                 </button>
               </div>

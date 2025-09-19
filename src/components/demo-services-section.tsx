@@ -43,9 +43,9 @@ export function DemoServicesSection() {
             </h1>
             <button className="inline-flex items-center gap-3 px-7 py-3 bg-[#00FFFF] text-[#1F3130] rounded-full font-medium hover:bg-[#00FFFF]/90 hover:transform hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(0,255,255,0.3)] transition-all duration-300">
               Book Audit
-              <span className="w-6 h-6 bg-[#1F3130] rounded-full flex items-center justify-center text-[#00FFFF] text-sm font-bold">
-                →
-              </span>
+              <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M7 17L17 7M17 7H7M17 7V17"/>
+              </svg>
             </button>
           </div>
         </div>
