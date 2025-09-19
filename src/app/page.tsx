@@ -16,7 +16,7 @@ export default function Home() {
       <AnimatedGradientBackground />
       <Header />
       <AnimatedBlobs />
-      <main className="relative z-20" style={{ marginTop: "100vh" }}>
+      <main className="relative z-20 main-offset">
         <ServicesSection />
         <DemoServicesSection />
         <AboutSection />

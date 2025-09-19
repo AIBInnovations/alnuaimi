@@ -70,11 +70,14 @@ export function AnimatedBlobs() {
 
   return (
     <div
-      className="h-screen w-screen flex items-center justify-center overflow-hidden fixed top-0 left-0 z-10"
+      className="hero-height w-screen flex items-center justify-center overflow-hidden fixed top-0 left-0 z-10"
       style={{
         filter: `blur(${scrollProgress * 5}px)`,
         transform: `scale(${1 + scrollProgress * 0.3})`,
-        transition: "filter 0.05s ease-out, transform 0.05s ease-out"
+        transition: "filter 0.05s ease-out, transform 0.05s ease-out",
+        width: "100vw",
+        height: "100vh",
+        maxHeight: "100dvh"
       }}
     >
       {/* Bottom Left Text */}
@@ -126,7 +129,7 @@ export function AnimatedBlobs() {
             Transform Business<br/>
             Operations with AI Solutions
           </h1>
-          <p className="text-white text-sm md:text-base mt-6 max-w-2xl mx-auto px-4">
+          <p className="hidden md:block text-white text-sm md:text-base mt-6 max-w-2xl mx-auto px-4">
             We deliver cutting-edge AI automation that streamlines processes,<br/>
             reduces costs by up to 60%, and revolutionizes customer engagement<br/>
             across the UAE and beyond.
