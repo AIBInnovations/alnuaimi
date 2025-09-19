@@ -125,6 +125,7 @@ export function CTASection() {
 
 
 
+
         {/* Glowing Beam Effect */}
         <div
           className="absolute w-1 h-[400px] z-10 animate-pulse"
