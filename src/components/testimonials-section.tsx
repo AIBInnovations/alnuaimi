@@ -63,7 +63,7 @@ export function TestimonialsSection() {
               key={index}
               className="bg-white/[0.03] border-2 border-[#00FFFF]/30 rounded-[25px] p-10 relative transition-all duration-300 hover:bg-white/[0.05] hover:border-[#00FFFF]/50 hover:transform hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.2)] backdrop-blur-sm"
             >
-              <div className="text-[#00FFFF]/30 text-7xl font-bold font-serif leading-none mb-5">"</div>
+              <div className="text-[#00FFFF]/30 text-7xl font-bold font-serif leading-none mb-5">&ldquo;</div>
               <p className="text-white/90 text-lg leading-relaxed mb-10 min-h-[100px]">
                 {testimonial.text}
               </p>
