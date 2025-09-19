@@ -18,13 +18,15 @@ export function AboutSection() {
       <div className="max-w-7xl w-full flex items-center gap-20 relative">
         {/* Timeline and About Badge */}
         <div className="flex-shrink-0 flex flex-col items-center mr-8">
-          <div className="inline-block px-6 py-2 border-2 border-[#00FFFF] rounded-full text-[#00FFFF] text-sm mb-5 bg-transparent hover:bg-[#00FFFF]/10 transition-all duration-300 whitespace-nowrap">
+          <div className="inline-block px-6 py-2 border-2 border-[#00FFFF] rounded-full text-[#00FFFF] text-sm mb-4 md:mb-5 bg-transparent hover:bg-[#00FFFF]/10 transition-all duration-300 whitespace-nowrap">
             About Us
           </div>
-          <div className="relative">
+          <div className="relative -rotate-90 md:rotate-0 h-[100px] md:h-[400px] -mb-12 md:mb-0 -ml-16 md:ml-0">
             <div
-              className="w-[2px] bg-gradient-to-b from-[#00FFFF] to-transparent"
-              style={{ height: '400px' }}
+              className="w-[2px] bg-gradient-to-b from-[#00FFFF] via-[#00FFFF60] to-transparent h-full"
+              style={{
+                background: 'linear-gradient(to bottom, #00FFFF 0%, #00FFFF80 20%, transparent 60%)'
+              }}
             />
             <div
               className="absolute top-0 left-1/2 transform -translate-x-1/2 w-3 h-3 bg-[#00FFFF] rounded-full"

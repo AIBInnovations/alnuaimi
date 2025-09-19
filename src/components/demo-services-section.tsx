@@ -120,9 +120,28 @@ export function DemoServicesSection() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-16 relative z-10">
             {services.map((service, index) => (
-            <div
-              key={index}
-              className="group bg-transparent border border-white/10 rounded-2xl p-8 hover:bg-white/5 hover:transform hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 relative flex flex-col h-full min-h-[400px]"
+            <div key={index} className="relative">
+              {/* Mobile circular gradient behind card */}
+              <div
+                className="absolute inset-0 md:hidden flex items-center justify-center pointer-events-none"
+                style={{
+                  zIndex: 0
+                }}
+              >
+                <div
+                  className="absolute rounded-full"
+                  style={{
+                    width: '300px',
+                    height: '300px',
+                    background: 'radial-gradient(circle, #00FFFF 0%, #00FFFF80 30%, transparent 60%)',
+                    opacity: 0.8,
+                    filter: 'blur(40px)'
+                  }}
+                />
+              </div>
+
+              <div
+                className="group bg-transparent border border-white/10 rounded-2xl p-8 hover:bg-white/5 hover:transform hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 relative flex flex-col h-full min-h-[400px]"
               style={{
                 animationDelay: `${0.4 + index * 0.1}s`,
                 borderLeftColor: 'rgba(0, 255, 255, 0.3)',
@@ -153,6 +172,7 @@ export function DemoServicesSection() {
               <p className="text-white/70 text-sm leading-relaxed h-[60px] flex items-end">
                 {service.description}
               </p>
+              </div>
             </div>
           ))}
           </div>

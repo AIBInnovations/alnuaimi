@@ -125,9 +125,10 @@ export function AnimatedBlobs() {
      >
         <div className="text-center">
           <p className="text-white text-sm md:text-base mb-4 tracking-wider">SULTAN ALNUAIMI</p>
-          <h1 className="text-white font-bold text-4xl md:text-5xl lg:text-5xl leading-tight tracking-tighter">
+          <h1 className="text-white font-medium text-[1.98rem] md:text-5xl lg:text-5xl leading-tight tracking-tighter">
             Transform Business<br/>
-            Operations with AI Solutions
+            Operations with<br/>
+            AI Solutions
           </h1>
           <p className="hidden md:block text-white text-sm md:text-base mt-6 max-w-2xl mx-auto px-4">
             We deliver cutting-edge AI automation that streamlines processes,<br/>

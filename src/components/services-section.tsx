@@ -23,9 +23,9 @@ export function ServicesSection() {
   ];
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center py-20 px-6 bg-[#1F3130] rounded-t-3xl shadow-2xl overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center py-12 md:py-20 px-4 md:px-6 bg-[#1F3130] rounded-t-3xl shadow-2xl overflow-hidden">
       {/* Earth Surface Curve - Full Background */}
-      <div className="absolute bottom-0 left-0 right-0 h-[500px] overflow-visible z-0">
+      <div className="absolute bottom-[400px] md:bottom-0 left-0 md:left-0 right-0 md:right-0 h-[500px] w-[250vw] md:w-full overflow-visible z-0 -rotate-90 md:rotate-0 translate-x-0 md:translate-x-0">
         {/* Clipping container for horizontal only */}
         <div
           className="absolute left-[10%] right-[10%] bottom-0"
@@ -46,7 +46,22 @@ export function ServicesSection() {
           >
             {/* Glow effect only */}
             <div
-              className="absolute w-[3500px] h-[3500px] rounded-full left-1/2 transform -translate-x-1/2 pointer-events-none"
+              className="absolute rounded-full left-1/2 transform -translate-x-1/2 pointer-events-none w-[1500px] h-[1500px] md:w-[3500px] md:h-[3500px] block md:hidden"
+              style={{
+                top: '550px',
+                boxShadow: `
+                  0 0 50px #00FFFF,
+                  0 0 80px #00FFFF,
+                  0 0 100px #00FFFFAA,
+                  0 0 120px #00FFFF88,
+                  0 0 150px #00FFFF66,
+                  0 0 180px #00FFFF44
+                `
+              }}
+            />
+            {/* Desktop glow effect */}
+            <div
+              className="absolute rounded-full left-1/2 transform -translate-x-1/2 pointer-events-none w-[3500px] h-[3500px] hidden md:block"
               style={{
                 top: '550px',
                 boxShadow: `
@@ -64,19 +79,19 @@ export function ServicesSection() {
       </div>
 
       {/* Services Badge */}
-      <div className="absolute top-32 left-1/2 transform -translate-x-1/2 z-10">
-        <div className="inline-block px-8 py-3 border-2 border-[#00FFFF] rounded-full text-[#00FFFF] text-sm bg-transparent hover:bg-[#00FFFF]/10 transition-all duration-300">
+      <div className="absolute top-16 md:top-32 left-1/2 transform -translate-x-1/2 z-10">
+        <div className="inline-block px-6 md:px-8 py-2 md:py-3 border-2 border-[#00FFFF] rounded-full text-[#00FFFF] text-xs md:text-sm bg-transparent hover:bg-[#00FFFF]/10 transition-all duration-300">
           Services
         </div>
       </div>
 
       <div className="max-w-7xl w-full relative z-10">
         {/* Header */}
-        <div className="text-center mb-20 mt-16">
-          <h1 className="text-6xl md:text-7xl font-light text-white mb-6 tracking-tight">
+        <div className="text-center mb-12 md:mb-20 mt-20 md:mt-16">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-light text-white mb-4 md:mb-6 tracking-tight px-4">
             Elevate Your Business
           </h1>
-          <p className="text-white/70 text-lg max-w-lg mx-auto leading-relaxed">
+          <p className="text-white/70 text-base md:text-lg max-w-lg mx-auto leading-relaxed px-4">
             Pioneering AI automation designed for the UAE, flexible, intelligent, and always in tune with your growth.
           </p>
         </div>
@@ -84,7 +99,7 @@ export function ServicesSection() {
         {/* Services Cards in Curved Layout */}
         <div className="relative">
           {/* Cards Container with Curve */}
-          <div className="relative flex justify-center items-end gap-8 z-20">
+          <div className="relative flex flex-col md:flex-row justify-center items-center md:items-end gap-6 md:gap-8 z-20 px-4">
             {services.map((service, index) => (
               <div
                 key={index}
@@ -92,25 +107,25 @@ export function ServicesSection() {
                   group relative bg-[#1F3130] hover:bg-[#243635]
                   border border-white/20 rounded-2xl overflow-hidden
                   transition-all duration-500 cursor-pointer
-                  min-h-[280px] w-[280px] flex flex-col
-                  hover:transform hover:-translate-y-4 hover:shadow-2xl
-                  ${service.featured ? 'scale-105 bg-[#243635]' : ''}
+                  min-h-[240px] md:min-h-[280px] w-full max-w-[320px] md:w-[280px] flex flex-col
+                  hover:transform hover:-translate-y-2 md:hover:-translate-y-4 hover:shadow-2xl
+                  ${service.featured ? 'md:scale-105 bg-[#243635]' : ''}
                 `}
                 style={{
-                  // Create upward bulging curve by positioning cards at different heights
-                  transform: `translateY(${getCurveOffset(index, services.length)}px) ${service.featured ? 'scale(1.05)' : 'scale(1)'}`,
-                  marginBottom: `${-getCurveOffset(index, services.length)}px`
-                }}
+                  '--curve-offset': `${getCurveOffset(index, services.length)}px`,
+                  '--neg-curve-offset': `${-getCurveOffset(index, services.length)}px`
+                } as React.CSSProperties}
+                data-curve-index={index}
               >
                 {/* Black gradient overlay from bottom */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none" />
 
                 {/* Content positioned at bottom */}
-                <div className="flex flex-col justify-end h-full p-8 relative z-10">
-                  <h3 className="text-2xl font-medium text-white mb-3 leading-tight">
+                <div className="flex flex-col justify-end h-full p-6 md:p-8 relative z-10">
+                  <h3 className="text-xl md:text-2xl font-medium text-white mb-2 md:mb-3 leading-tight">
                     {service.title}
                   </h3>
-                  <p className="text-white/70 text-sm leading-relaxed">
+                  <p className="text-white/70 text-sm md:text-sm leading-relaxed">
                     {service.description}
                   </p>
                 </div>
@@ -130,6 +145,22 @@ export function ServicesSection() {
           to {
             opacity: 1;
             transform: translateY(0);
+          }
+        }
+
+        /* Desktop curve positioning */
+        @media (min-width: 768px) {
+          [data-curve-index] {
+            transform: translateY(var(--curve-offset));
+            margin-bottom: var(--neg-curve-offset);
+          }
+        }
+
+        /* Mobile: no curve, just stacked */
+        @media (max-width: 767px) {
+          [data-curve-index] {
+            transform: none;
+            margin-bottom: 0;
           }
         }
 

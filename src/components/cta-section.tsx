@@ -2,14 +2,14 @@
 
 export function CTASection() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center py-16 px-10 bg-[#1F3130]">
+    <section className="relative min-h-screen flex items-center justify-center py-16 px-4 md:px-10 bg-[#1F3130]">
       {/* Curved Gradient Surface - Tilted Left */}
       <div
         className="absolute h-[500px] overflow-visible z-0"
         style={{
           bottom: '-100px',
-          left: '800px',
-          right: '-800px',
+          left: '600px',
+          right: '-600px',
           transform: 'rotate(-45deg)',
           transformOrigin: 'center bottom'
         }}
@@ -32,9 +32,9 @@ export function CTASection() {
               WebkitMaskImage: 'linear-gradient(90deg, transparent 0%, rgba(0,0,0,0.1) 5%, rgba(0,0,0,1) 20%, rgba(0,0,0,1) 80%, rgba(0,0,0,0.1) 95%, transparent 100%)'
             }}
           >
-            {/* Glow effect only */}
+            {/* Glow effect only - Desktop */}
             <div
-              className="absolute w-[2000px] h-[2000px] rounded-full left-1/2 transform -translate-x-1/2 pointer-events-none"
+              className="absolute w-[2000px] h-[2000px] rounded-full left-1/2 transform -translate-x-1/2 pointer-events-none hidden md:block"
               style={{
                 top: '250px',
                 boxShadow: `
@@ -48,16 +48,33 @@ export function CTASection() {
               }}
             />
 
+            {/* Glow effect only - Mobile (smaller and rounder) */}
+            <div
+              className="absolute w-[600px] h-[600px] rounded-full transform -translate-x-1/4 -rotate-12 pointer-events-none block md:hidden"
+              style={{
+                left: '-150px',
+                top: '400px',
+                boxShadow: `
+                  0 0 40px #00FFFF,
+                  0 0 60px #00FFFF,
+                  0 0 80px #00FFFFAA,
+                  0 0 100px #00FFFF88,
+                  0 0 120px #00FFFF66,
+                  0 0 150px #00FFFF44
+                `
+              }}
+            />
+
           </div>
         </div>
       </div>
-      <div className="w-full max-w-7xl flex items-center justify-center gap-4 relative">
+      <div className="w-full max-w-7xl flex flex-col lg:flex-row items-center justify-center gap-4 relative">
         {/* Main Left Card */}
-        <div className="relative w-[880px] h-[500px] bg-white/[0.02] border-2 border-[#00FFFF]/80 rounded-[30px] flex z-20">
+        <div className="relative w-full lg:w-[880px] h-auto lg:h-[500px] bg-white/[0.02] border-2 border-[#00FFFF]/80 rounded-[30px] flex flex-col lg:flex-row z-20">
           {/* Left Content Side */}
-          <div className="flex-1 p-16 flex flex-col">
+          <div className="flex-1 p-8 md:p-16 flex flex-col">
             {/* Icon Pills */}
-            <div className="flex gap-5 mb-12">
+            <div className="flex gap-3 md:gap-5 mb-8 md:mb-12">
               <div className="w-12 h-12 border-2 border-[#00FFFF]/60 rounded-full flex items-center justify-center bg-[#00FFFF]/5 hover:bg-[#00FFFF]/15 hover:border-[#00FFFF] hover:scale-110 transition-all duration-300 cursor-pointer">
                 <svg className="w-6 h-6 stroke-[#00FFFF] fill-none stroke-2" viewBox="0 0 24 24">
                   <circle cx="12" cy="12" r="3"/>
@@ -85,14 +102,14 @@ export function CTASection() {
               <div className="text-[#00FFFF]/90 text-lg mb-5 font-normal">
                 Start Scaling Today
               </div>
-              <h1 className="text-white text-5xl font-light leading-tight tracking-tight">
+              <h1 className="text-white text-3xl md:text-5xl font-light leading-tight tracking-tight">
                 Ready to Scale<br/>Smarter?
               </h1>
             </div>
           </div>
 
           {/* Right Image Side */}
-          <div className="w-[380px] flex-shrink-0 p-4">
+          <div className="w-full lg:w-[380px] flex-shrink-0 p-4 h-[300px] lg:h-auto">
             <div
               className="w-full h-full rounded-2xl"
               style={{
@@ -103,9 +120,9 @@ export function CTASection() {
         </div>
 
         {/* Right Side Stack */}
-        <div className="flex flex-col z-30">
+        <div className="flex flex-col lg:flex-col w-full lg:w-auto z-30 gap-4">
           {/* Small Box */}
-          <div className="w-[396px] h-[250px] bg-white/[0.02] border-2 border-[#00FFFF]/80 rounded-[25px] p-4">
+          <div className="w-full lg:w-[396px] h-[250px] lg:h-[250px] bg-white/[0.02] border-2 border-[#00FFFF]/80 rounded-[25px] p-4">
             <div
               className="w-full h-full rounded-2xl"
               style={{
@@ -115,7 +132,7 @@ export function CTASection() {
           </div>
 
           {/* CTA Button Container */}
-          <div className="h-[250px] flex items-center justify-center">
+          <div className="h-auto lg:h-[250px] flex items-center justify-center py-6 lg:py-0">
             <button className="px-6 py-3 bg-[#00FFFF] text-[#0a1f1f] border-none rounded-[10px] text-sm font-semibold cursor-pointer flex items-center justify-center gap-2 transition-all duration-300 hover:bg-[#00FFFF]/90 hover:transform hover:-translate-y-1 hover:shadow-[0_15px_40px_rgba(0,255,255,0.4)]">
               Get Started Now
               <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -215,55 +232,6 @@ export function CTASection() {
           animation: beamGlow 3s ease-in-out infinite;
         }
 
-        @media (max-width: 1200px) {
-          section > div {
-            transform: scale(0.85);
-          }
-        }
-
-        @media (max-width: 1024px) {
-          section > div {
-            transform: scale(0.7);
-          }
-        }
-
-        @media (max-width: 768px) {
-          section > div {
-            flex-direction: column;
-            transform: scale(1);
-          }
-
-          section > div > div:first-child {
-            width: 100%;
-            max-width: 500px;
-            height: auto;
-            padding: 40px;
-          }
-
-          section > div > div:first-child > div:last-child {
-            position: static;
-            margin-top: 100px;
-          }
-
-          section > div > div:nth-child(2) {
-            display: none;
-          }
-
-          section > div > div:nth-child(3) {
-            position: static;
-            margin-top: 30px;
-            width: 100%;
-            max-width: 400px;
-          }
-
-          section > div > div:last-child {
-            display: none;
-          }
-
-          section > div > div:first-child > div:last-child > h1 {
-            font-size: 42px;
-          }
-        }
       `}</style>
     </section>
   );
