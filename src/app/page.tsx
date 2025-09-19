@@ -10,7 +10,7 @@ import { CTASection } from "@/components/cta-section";
 import { TestimonialsSection } from "@/components/testimonials-section";
 import { ContactSection } from "@/components/contact-section";
 
-export default function Home() {
+export default function Home() { 
   return (
     <div style={{ backgroundColor: "#1F3130" }}>
       <AnimatedGradientBackground />
